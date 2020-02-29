@@ -1,5 +1,6 @@
 package reyapr.learn_beans.controllers;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import reyapr.learn_beans.services.GreetingService;
 
@@ -8,7 +9,7 @@ public class ConstructorInjected {
 
     private GreetingService greetingService;
 
-    public ConstructorInjected(GreetingService greetingService) {
+    public ConstructorInjected(@Qualifier("constructorService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
